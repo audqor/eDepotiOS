@@ -14,7 +14,7 @@ import Alamofire
 class EzAlamofire {
     
     //var connectView:EzUrlConnectView = EzUrlConnectView()
-    
+     
     func IsExistWebUrl(url: String, parent:EzUrlConnectView)
     {
         //connectView = parent

@@ -9,7 +9,7 @@
 
 import Foundation
 
-
+ 
 class EzDatabase{
     
     var databasePath = String()
