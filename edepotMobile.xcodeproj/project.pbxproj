@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3793CBA0212657210049FFE0 /* Pods_edepotMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8161B2BF24C96167D60696D /* Pods_edepotMobile.framework */; };
+		3793CBA1212657620049FFE0 /* Pods_EzShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3996D36F072EA078203EF44 /* Pods_EzShareExtension.framework */; };
+		37FC794C211C15F1004CF2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC794B211C15F1004CF2AB /* AppDelegate.swift */; };
+		37FC794E211C15F1004CF2AB /* EzUrlConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC794D211C15F1004CF2AB /* EzUrlConnectionView.swift */; };
+		37FC7951211C15F1004CF2AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FC794F211C15F1004CF2AB /* Main.storyboard */; };
+		37FC7954211C15F1004CF2AB /* edepotMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7952211C15F1004CF2AB /* edepotMobile.xcdatamodeld */; };
+		37FC7956211C15F6004CF2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FC7955211C15F6004CF2AB /* Assets.xcassets */; };
+		37FC7959211C15F6004CF2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FC7957211C15F6004CF2AB /* LaunchScreen.storyboard */; };
+		37FC7962211C1781004CF2AB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7961211C1781004CF2AB /* MainView.swift */; };
+		37FC7964211C179D004CF2AB /* EzAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7963211C179D004CF2AB /* EzAlamofire.swift */; };
+		37FC7966211C17AA004CF2AB /* EzDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7965211C17AA004CF2AB /* EzDatabase.swift */; };
+		37FC796F211C1815004CF2AB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC796E211C1815004CF2AB /* ShareViewController.swift */; };
+		37FC7972211C1815004CF2AB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FC7970211C1815004CF2AB /* MainInterface.storyboard */; };
+		37FC7976211C1815004CF2AB /* EzShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 37FC796C211C1815004CF2AB /* EzShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		37FC7989211C194E004CF2AB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7981211C194D004CF2AB /* FMDatabaseAdditions.m */; };
+		37FC798A211C194E004CF2AB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7985211C194D004CF2AB /* FMDatabasePool.m */; };
+		37FC798B211C194E004CF2AB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7986211C194D004CF2AB /* FMResultSet.m */; };
+		37FC798C211C194E004CF2AB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7987211C194E004CF2AB /* FMDatabase.m */; };
+		37FC798D211C194E004CF2AB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7988211C194E004CF2AB /* FMDatabaseQueue.m */; };
+		37FC7990211C1DDB004CF2AB /* default_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FC798F211C1DDB004CF2AB /* default_logo.png */; };
+		37FC7992211C228B004CF2AB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FC7991211C228B004CF2AB /* libsqlite3.0.tbd */; };
+		37FC7998211D5DB6004CF2AB /* EzDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7997211D5DB6004CF2AB /* EzDatabase.swift */; };
+		37FC79A4211D60B2004CF2AB /* edepotMobile-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 37FC797D211C194C004CF2AB /* edepotMobile-Bridging-Header.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37FC7974211C1815004CF2AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37FC7940211C15F1004CF2AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37FC796B211C1815004CF2AB;
+			remoteInfo = EzShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37FC797A211C1815004CF2AB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				37FC7976211C1815004CF2AB /* EzShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0FC5B4B2B6BB5437B49DE4E2 /* Pods-EzShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzShareExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-EzShareExtension/Pods-EzShareExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2FFF7A87E06D06A9CA988ADD /* Pods-edepotMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-edepotMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		37FC7948211C15F1004CF2AB /* edepotMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = edepotMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FC794B211C15F1004CF2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37FC794D211C15F1004CF2AB /* EzUrlConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzUrlConnectionView.swift; sourceTree = "<group>"; };
+		37FC7950211C15F1004CF2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37FC7953211C15F1004CF2AB /* edepotMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = edepotMobile.xcdatamodel; sourceTree = "<group>"; };
+		37FC7955211C15F6004CF2AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37FC7958211C15F6004CF2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37FC795A211C15F6004CF2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FC7961211C1781004CF2AB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		37FC7963211C179D004CF2AB /* EzAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzAlamofire.swift; sourceTree = "<group>"; };
+		37FC7965211C17AA004CF2AB /* EzDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzDatabase.swift; sourceTree = "<group>"; };
+		37FC796C211C1815004CF2AB /* EzShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EzShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FC796E211C1815004CF2AB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		37FC7971211C1815004CF2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		37FC7973211C1815004CF2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FC797B211C18B6004CF2AB /* EzShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EzShareExtension.entitlements; sourceTree = "<group>"; };
+		37FC797C211C18C8004CF2AB /* edepotMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = edepotMobile.entitlements; sourceTree = "<group>"; };
+		37FC797D211C194C004CF2AB /* edepotMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "edepotMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		37FC797E211C194D004CF2AB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = ../../fmdb/FMDB.h; sourceTree = "<group>"; };
+		37FC797F211C194D004CF2AB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../../fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		37FC7980211C194D004CF2AB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = ../../fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		37FC7981211C194D004CF2AB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../../fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		37FC7982211C194D004CF2AB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = ../../fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		37FC7983211C194D004CF2AB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = ../../fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		37FC7984211C194D004CF2AB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../../fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		37FC7985211C194D004CF2AB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../../fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		37FC7986211C194D004CF2AB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../../fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		37FC7987211C194E004CF2AB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = ../../fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		37FC7988211C194E004CF2AB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = ../../fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		37FC798F211C1DDB004CF2AB /* default_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_logo.png; path = ../../../../default_logo.png; sourceTree = "<group>"; };
+		37FC7991211C228B004CF2AB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		37FC7997211D5DB6004CF2AB /* EzDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzDatabase.swift; sourceTree = "<group>"; };
+		96D665ED854B41AC3AF493ED /* Pods-EzShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzShareExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EzShareExtension/Pods-EzShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		B653979A9B80B066EBE86068 /* Pods-edepotMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-edepotMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile.release.xcconfig"; sourceTree = "<group>"; };
+		C3996D36F072EA078203EF44 /* Pods_EzShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EzShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8161B2BF24C96167D60696D /* Pods_edepotMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_edepotMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37FC7945211C15F1004CF2AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3793CBA0212657210049FFE0 /* Pods_edepotMobile.framework in Frameworks */,
+				37FC7992211C228B004CF2AB /* libsqlite3.0.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FC7969211C1815004CF2AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3793CBA1212657620049FFE0 /* Pods_EzShareExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		126414A1899E2BCD86334C14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37FC7991211C228B004CF2AB /* libsqlite3.0.tbd */,
+				C3996D36F072EA078203EF44 /* Pods_EzShareExtension.framework */,
+				D8161B2BF24C96167D60696D /* Pods_edepotMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37FC793F211C15F1004CF2AB = {
+			isa = PBXGroup;
+			children = (
+				37FC7967211C17C0004CF2AB /* Resource */,
+				37FC7960211C1690004CF2AB /* Database */,
+				37FC794A211C15F1004CF2AB /* edepotMobile */,
+				37FC796D211C1815004CF2AB /* EzShareExtension */,
+				37FC7949211C15F1004CF2AB /* Products */,
+				BDD340BEEB1B918F4D923606 /* Pods */,
+				126414A1899E2BCD86334C14 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37FC7949211C15F1004CF2AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37FC7948211C15F1004CF2AB /* edepotMobile.app */,
+				37FC796C211C1815004CF2AB /* EzShareExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37FC794A211C15F1004CF2AB /* edepotMobile */ = {
+			isa = PBXGroup;
+			children = (
+				37FC797C211C18C8004CF2AB /* edepotMobile.entitlements */,
+				37FC795A211C15F6004CF2AB /* Info.plist */,
+				37FC794B211C15F1004CF2AB /* AppDelegate.swift */,
+				37FC7963211C179D004CF2AB /* EzAlamofire.swift */,
+				37FC7965211C17AA004CF2AB /* EzDatabase.swift */,
+				37FC794D211C15F1004CF2AB /* EzUrlConnectionView.swift */,
+				37FC7961211C1781004CF2AB /* MainView.swift */,
+				37FC7955211C15F6004CF2AB /* Assets.xcassets */,
+				37FC7952211C15F1004CF2AB /* edepotMobile.xcdatamodeld */,
+				37FC7957211C15F6004CF2AB /* LaunchScreen.storyboard */,
+				37FC794F211C15F1004CF2AB /* Main.storyboard */,
+			);
+			path = edepotMobile;
+			sourceTree = "<group>";
+		};
+		37FC7960211C1690004CF2AB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				37FC7983211C194D004CF2AB /* FMDatabase.h */,
+				37FC7987211C194E004CF2AB /* FMDatabase.m */,
+				37FC797F211C194D004CF2AB /* FMDatabaseAdditions.h */,
+				37FC7981211C194D004CF2AB /* FMDatabaseAdditions.m */,
+				37FC7984211C194D004CF2AB /* FMDatabasePool.h */,
+				37FC7985211C194D004CF2AB /* FMDatabasePool.m */,
+				37FC7980211C194D004CF2AB /* FMDatabaseQueue.h */,
+				37FC7988211C194E004CF2AB /* FMDatabaseQueue.m */,
+				37FC797E211C194D004CF2AB /* FMDB.h */,
+				37FC7982211C194D004CF2AB /* FMResultSet.h */,
+				37FC7986211C194D004CF2AB /* FMResultSet.m */,
+				37FC797D211C194C004CF2AB /* edepotMobile-Bridging-Header.h */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		37FC7967211C17C0004CF2AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				37FC798E211C1DCE004CF2AB /* Image */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		37FC796D211C1815004CF2AB /* EzShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				37FC797B211C18B6004CF2AB /* EzShareExtension.entitlements */,
+				37FC796E211C1815004CF2AB /* ShareViewController.swift */,
+				37FC7970211C1815004CF2AB /* MainInterface.storyboard */,
+				37FC7973211C1815004CF2AB /* Info.plist */,
+				37FC7997211D5DB6004CF2AB /* EzDatabase.swift */,
+			);
+			path = EzShareExtension;
+			sourceTree = "<group>";
+		};
+		37FC798E211C1DCE004CF2AB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				37FC798F211C1DDB004CF2AB /* default_logo.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		BDD340BEEB1B918F4D923606 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96D665ED854B41AC3AF493ED /* Pods-EzShareExtension.debug.xcconfig */,
+				0FC5B4B2B6BB5437B49DE4E2 /* Pods-EzShareExtension.release.xcconfig */,
+				2FFF7A87E06D06A9CA988ADD /* Pods-edepotMobile.debug.xcconfig */,
+				B653979A9B80B066EBE86068 /* Pods-edepotMobile.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37FC7947211C15F1004CF2AB /* edepotMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FC795D211C15F6004CF2AB /* Build configuration list for PBXNativeTarget "edepotMobile" */;
+			buildPhases = (
+				65CD8205063C889D43B4C9E8 /* [CP] Check Pods Manifest.lock */,
+				37FC7944211C15F1004CF2AB /* Sources */,
+				37FC7945211C15F1004CF2AB /* Frameworks */,
+				37FC7946211C15F1004CF2AB /* Resources */,
+				37FC797A211C1815004CF2AB /* Embed App Extensions */,
+				C2BF09796E38ABB521FF64DB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37FC7975211C1815004CF2AB /* PBXTargetDependency */,
+			);
+			name = edepotMobile;
+			productName = edepotMobile;
+			productReference = 37FC7948211C15F1004CF2AB /* edepotMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37FC796B211C1815004CF2AB /* EzShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FC7977211C1815004CF2AB /* Build configuration list for PBXNativeTarget "EzShareExtension" */;
+			buildPhases = (
+				3ACE4E937AF476AC11288EE8 /* [CP] Check Pods Manifest.lock */,
+				37FC7968211C1815004CF2AB /* Sources */,
+				37FC7969211C1815004CF2AB /* Frameworks */,
+				37FC796A211C1815004CF2AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EzShareExtension;
+			productName = EzShareExtension;
+			productReference = 37FC796C211C1815004CF2AB /* EzShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37FC7940211C15F1004CF2AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = nocson;
+				TargetAttributes = {
+					37FC7947211C15F1004CF2AB = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					37FC796B211C1815004CF2AB = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 37FC7943211C15F1004CF2AB /* Build configuration list for PBXProject "edepotMobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37FC793F211C15F1004CF2AB;
+			productRefGroup = 37FC7949211C15F1004CF2AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37FC7947211C15F1004CF2AB /* edepotMobile */,
+				37FC796B211C1815004CF2AB /* EzShareExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37FC7946211C15F1004CF2AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FC7990211C1DDB004CF2AB /* default_logo.png in Resources */,
+				37FC7959211C15F6004CF2AB /* LaunchScreen.storyboard in Resources */,
+				37FC7956211C15F6004CF2AB /* Assets.xcassets in Resources */,
+				37FC7951211C15F1004CF2AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FC796A211C1815004CF2AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FC7972211C1815004CF2AB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ACE4E937AF476AC11288EE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EzShareExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65CD8205063C889D43B4C9E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-edepotMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2BF09796E38ABB521FF64DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37FC7944211C15F1004CF2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FC7964211C179D004CF2AB /* EzAlamofire.swift in Sources */,
+				37FC7966211C17AA004CF2AB /* EzDatabase.swift in Sources */,
+				37FC794E211C15F1004CF2AB /* EzUrlConnectionView.swift in Sources */,
+				37FC798C211C194E004CF2AB /* FMDatabase.m in Sources */,
+				37FC7962211C1781004CF2AB /* MainView.swift in Sources */,
+				37FC7954211C15F1004CF2AB /* edepotMobile.xcdatamodeld in Sources */,
+				37FC798A211C194E004CF2AB /* FMDatabasePool.m in Sources */,
+				37FC798B211C194E004CF2AB /* FMResultSet.m in Sources */,
+				37FC798D211C194E004CF2AB /* FMDatabaseQueue.m in Sources */,
+				37FC7989211C194E004CF2AB /* FMDatabaseAdditions.m in Sources */,
+				37FC794C211C15F1004CF2AB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FC7968211C1815004CF2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FC79A4211D60B2004CF2AB /* edepotMobile-Bridging-Header.h in Sources */,
+				37FC796F211C1815004CF2AB /* ShareViewController.swift in Sources */,
+				37FC7998211D5DB6004CF2AB /* EzDatabase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37FC7975211C1815004CF2AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37FC796B211C1815004CF2AB /* EzShareExtension */;
+			targetProxy = 37FC7974211C1815004CF2AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37FC794F211C15F1004CF2AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FC7950211C15F1004CF2AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37FC7957211C15F6004CF2AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FC7958211C15F6004CF2AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37FC7970211C1815004CF2AB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FC7971211C1815004CF2AB /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37FC795B211C15F6004CF2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37FC795C211C15F6004CF2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37FC795E211C15F6004CF2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFF7A87E06D06A9CA988ADD /* Pods-edepotMobile.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = edepotMobile/edepotMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9PG9FMDJD;
+				INFOPLIST_FILE = edepotMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nocson.edepot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "edepotMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		37FC795F211C15F6004CF2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B653979A9B80B066EBE86068 /* Pods-edepotMobile.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = edepotMobile/edepotMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9PG9FMDJD;
+				INFOPLIST_FILE = edepotMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nocson.edepot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "edepotMobile-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		37FC7978211C1815004CF2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96D665ED854B41AC3AF493ED /* Pods-EzShareExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EzShareExtension/EzShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9PG9FMDJD;
+				INFOPLIST_FILE = EzShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nocson.edepot.shareextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "edepotMobile-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37FC7979211C1815004CF2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FC5B4B2B6BB5437B49DE4E2 /* Pods-EzShareExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EzShareExtension/EzShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9PG9FMDJD;
+				INFOPLIST_FILE = EzShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nocson.edepot.shareextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "edepotMobile-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37FC7943211C15F1004CF2AB /* Build configuration list for PBXProject "edepotMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FC795B211C15F6004CF2AB /* Debug */,
+				37FC795C211C15F6004CF2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FC795D211C15F6004CF2AB /* Build configuration list for PBXNativeTarget "edepotMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FC795E211C15F6004CF2AB /* Debug */,
+				37FC795F211C15F6004CF2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FC7977211C1815004CF2AB /* Build configuration list for PBXNativeTarget "EzShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FC7978211C1815004CF2AB /* Debug */,
+				37FC7979211C1815004CF2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37FC7952211C15F1004CF2AB /* edepotMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37FC7953211C15F1004CF2AB /* edepotMobile.xcdatamodel */,
+			);
+			currentVersion = 37FC7953211C15F1004CF2AB /* edepotMobile.xcdatamodel */;
+			path = edepotMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 37FC7940211C15F1004CF2AB /* Project object */;
+}

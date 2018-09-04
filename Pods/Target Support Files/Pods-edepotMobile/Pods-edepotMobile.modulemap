@@ -1,0 +1,6 @@
+framework module Pods_edepotMobile {
+  umbrella header "Pods-edepotMobile-umbrella.h"
+
+  export *
+  module * { export * }
+}
