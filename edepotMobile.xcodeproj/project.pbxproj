@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37186DC4213FB05600F17740 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37186DC3213FB05600F17740 /* UserNotifications.framework */; };
+		37186DC82142634900F17740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37186DC72142634800F17740 /* GoogleService-Info.plist */; };
 		3793CBA0212657210049FFE0 /* Pods_edepotMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8161B2BF24C96167D60696D /* Pods_edepotMobile.framework */; };
 		3793CBA1212657620049FFE0 /* Pods_EzShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3996D36F072EA078203EF44 /* Pods_EzShareExtension.framework */; };
 		37FC794C211C15F1004CF2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC794B211C15F1004CF2AB /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		0FC5B4B2B6BB5437B49DE4E2 /* Pods-EzShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzShareExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-EzShareExtension/Pods-EzShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		2FFF7A87E06D06A9CA988ADD /* Pods-edepotMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-edepotMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		37186DC3213FB05600F17740 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		37186DC72142634800F17740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37FC7948211C15F1004CF2AB /* edepotMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = edepotMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FC794B211C15F1004CF2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FC794D211C15F1004CF2AB /* EzUrlConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EzUrlConnectionView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37186DC4213FB05600F17740 /* UserNotifications.framework in Frameworks */,
 				3793CBA0212657210049FFE0 /* Pods_edepotMobile.framework in Frameworks */,
 				37FC7992211C228B004CF2AB /* libsqlite3.0.tbd in Frameworks */,
 			);
@@ -121,6 +126,7 @@
 		126414A1899E2BCD86334C14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37186DC3213FB05600F17740 /* UserNotifications.framework */,
 				37FC7991211C228B004CF2AB /* libsqlite3.0.tbd */,
 				C3996D36F072EA078203EF44 /* Pods_EzShareExtension.framework */,
 				D8161B2BF24C96167D60696D /* Pods_edepotMobile.framework */,
@@ -153,6 +159,7 @@
 		37FC794A211C15F1004CF2AB /* edepotMobile */ = {
 			isa = PBXGroup;
 			children = (
+				37186DC72142634800F17740 /* GoogleService-Info.plist */,
 				37FC797C211C18C8004CF2AB /* edepotMobile.entitlements */,
 				37FC795A211C15F6004CF2AB /* Info.plist */,
 				37FC794B211C15F1004CF2AB /* AppDelegate.swift */,
@@ -329,6 +336,7 @@
 			files = (
 				37FC7990211C1DDB004CF2AB /* default_logo.png in Resources */,
 				37FC7959211C15F6004CF2AB /* LaunchScreen.storyboard in Resources */,
+				37186DC82142634900F17740 /* GoogleService-Info.plist in Resources */,
 				37FC7956211C15F6004CF2AB /* Assets.xcassets in Resources */,
 				37FC7951211C15F1004CF2AB /* Main.storyboard in Resources */,
 			);
@@ -390,11 +398,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-edepotMobile/Pods-edepotMobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

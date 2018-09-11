@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 import UserNotifications
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
+
 
 
 @UIApplicationMain
@@ -25,51 +29,85 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.alert, .badge, .sound])
         
         
+        
     }
     
     //앱은 꺼져있는데 푸시를 받고 해당 푸시를 클릭했을 때
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        if #available(iOS 10.0, *){
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in
-                if(error != nil){
-                    print("");
-                    return
-                }
-                if granted{
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, err)
+            
+            in
+            if err != nil{
+                
+            } else {
+                
+                UNUserNotificationCenter.current().delegate = self
+                Messaging.messaging().delegate = self
+                
+                DispatchQueue.main.async {
                     application.registerForRemoteNotifications()
-                    UNUserNotificationCenter.current().delegate = self
-                    
                 }
-                else{
-                    print("")
-                }
-                
-                
+                FirebaseApp.configure()
             }
-        }else{
-            
-            let notificationSettings = UIUserNotificationSettings(types:[.alert,.sound,.badge],categories:nil)
-            application.registerUserNotificationSettings(notificationSettings)
-            application.registerForRemoteNotifications()
-            application.delegate = self
-        }
-        
-        
-        let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
-        if remoteNotif != nil {
-            if (remoteNotif!["aps" as NSString] as? NSDictionary) != nil {
-                isAlert = true
-            }
-        }
-        else{
             
         }
-        
         
         return true
+        
+        
+        
+        
+        //APNS 사용. 기존 코드
+//        if #available(iOS 10.0, *){
+//            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in
+//                if(error != nil){
+//                    print("");
+//                    return
+//                 }
+//                if granted{
+//                    application.registerForRemoteNotifications()
+//                    UNUserNotificationCenter.current().delegate = self
+//
+//                }
+//                else{
+//                    print("")
+//                }
+//
+//
+//            }
+//        }else{
+//
+//            let notificationSettings = UIUserNotificationSettings(types:[.alert,.sound,.badge],categories:nil)
+//            application.registerUserNotificationSettings(notificationSettings)
+//            application.registerForRemoteNotifications()
+//            application.delegate = self
+//        }
+//
+//
+//        let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
+//        if remoteNotif != nil {
+//            if (remoteNotif!["aps" as NSString] as? NSDictionary) != nil {
+//                isAlert = true
+//            }
+//        }
+//        else{
+//
+//        }
+//
+//
+//        return true
     }
+    
+    func ConnectToFCM() {
+        
+        Messaging.messaging().shouldEstablishDirectChannel = true
+    }
+    
+    
+    
+    
     
     //앱은 꺼져있지만 완전히 종료되지 않고 백그라운드에서 실행중 일때
     @available(iOS 10.0, *)
@@ -120,28 +158,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler complitionHandler: @escaping (UIBackgroundFetchResult) -> Void){
         
+
+
+        print("MessageID: \(userInfo["gcm.message_id"])")
+        print(userInfo)
         
-        if application.applicationState == .active{
-            
-            //APP실행중일때
-            //푸시처리
-            
-            print("1")
-            
-        }
-        else if application.applicationState == .background{
-            
-            //App 백그라운드일때
-            
-            print("2")
-        }
-        else{
-            
-            //푸시 클릭하고 들어옴
-            
-            
-            print("3")
-        }
+        complitionHandler(UIBackgroundFetchResult.newData)
+
+
+
     }
     
     
@@ -163,15 +188,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //
         //        UNUserNotificationCenter.current().add(request, withCompletionHandler: {(error) in })
         
+        
+        
+        
+        Messaging.messaging().shouldEstablishDirectChannel = false
+        print("Disconnected from FCM.")
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
+        Messaging.messaging().shouldEstablishDirectChannel = false
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+       ConnectToFCM()
+        
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        
+        let newToken = InstanceID.instanceID().token()
+        ConnectToFCM()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -229,16 +269,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        
         let urlConnectVC = UIApplication.shared.delegate as! AppDelegate
-        urlConnectVC.tokenKey = deviceTokenString;
         
+        urlConnectVC.tokenKey = InstanceID.instanceID().token()!;
         print(deviceTokenString)
         
+        //shareExtension을 위해 꼭 필요한 코드!!
         let shareDefaults = UserDefaults(suiteName: "group.edepot")
         shareDefaults!.set(tokenKey, forKey:"tokenKey")
+        
+        Messaging.messaging().apnsToken = deviceToken
+
+        
+    }
+    
+  
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Unable to register for remote notifications: \(error.localizedDescription)")
     }
     
 }
 
 
+extension AppDelegate : MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken
+        fcmToken: String) {
+        
+        print("Firebase registration token: \(fcmToken)")
+    }
+    func messaging(_ messaging: Messaging, didReceive remoteMessage:
+        MessagingRemoteMessage) {
+        print("Received data message: \(remoteMessage.appData)")
+    }
+}
