@@ -117,9 +117,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier{
             let userInfo = response.notification.request.content.userInfo
             
-            if let aps = userInfo["aps"] as? NSDictionary {
+            if let aps = userInfo["alert"] as? NSDictionary {
                 
-                let strURL: String? = (aps["url"] as! String?)
+                let strURL: String? = (aps["title"] as! String?)
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 
                 //앱 종료된 시점에서 타게되면 crash되기 떄문에 방어코드
@@ -204,13 +204,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-       ConnectToFCM()
+        let urlConnectVC = UIApplication.shared.delegate as! AppDelegate
+        
+        urlConnectVC.tokenKey = InstanceID.instanceID().token()!;
+        print(tokenKey)
+        ConnectToFCM()
         
     }
     
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         
-        let newToken = InstanceID.instanceID().token()
+        
         ConnectToFCM()
     }
     
@@ -269,9 +273,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        let urlConnectVC = UIApplication.shared.delegate as! AppDelegate
         
-        urlConnectVC.tokenKey = InstanceID.instanceID().token()!;
         print(deviceTokenString)
         
         //shareExtension을 위해 꼭 필요한 코드!!
