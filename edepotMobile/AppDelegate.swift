@@ -191,35 +191,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //다른 기기에서 로그인이 되었다면 여기로 들어옵니다
         if let logout = userInfo[AnyHashable("logout")]{
-//
-//            let alert = UIAlertController(title: "로그아웃", message: "다른기기에서 로그인되어 강제로 로그아웃됩니다.", preferredStyle: .alert)
-//            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction!) -> Void in
-//
-//                MainView.database.ContactDB()
-//                MainView.database.DeleteUrlInfo()
-//
-//
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let view = storyboard.instantiateViewController(withIdentifier: "UrlConnectView") as UIViewController
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                //show window
-//                appDelegate.window?.rootViewController = view
-//
-//            })
-//
-//            alert.addAction(action)
-            
          
             mainView.Logout()
-            
-            
         }
-        
-        
         complitionHandler(UIBackgroundFetchResult.newData)
-
-
-
     }
     
     
