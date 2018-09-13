@@ -380,4 +380,30 @@ class MainView : UIViewController, WKUIDelegate, WKNavigationDelegate, UIWebView
         
         return nil
     }
+    
+    func Logout(){
+        
+        let alert = UIAlertController(title: "로그아웃", message: "다른기기에서 로그인되어 강제로 로그아웃됩니다.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction!) -> Void in
+            
+//            MainView.database.ContactDB()
+//            MainView.database.DeleteUrlInfo()
+//
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let view = storyboard.instantiateViewController(withIdentifier: "UrlConnectView") as UIViewController
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            //show window
+//            appDelegate.window?.rootViewController = view
+            
+            self.WebView.evaluateJavaScript("LogoutClick()", completionHandler: { result, error in
+                
+            })
+          
+            
+        })
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

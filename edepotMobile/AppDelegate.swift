@@ -54,6 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
         }
         
+        let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
+                if remoteNotif != nil {
+                    if (remoteNotif!["aps" as NSString] as? NSDictionary) != nil {
+                        isAlert = true
+                    }
+                }
+        
         return true
         
         
@@ -116,21 +123,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //푸시를 클릭했을 때
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier{
             let userInfo = response.notification.request.content.userInfo
+
             
-            if let aps = userInfo["alert"] as? NSDictionary {
+            if let aps = userInfo[AnyHashable("aps")]{
+               
+                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 
-                let strURL: String? = (aps["title"] as! String?)
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                
-                //앱 종료된 시점에서 타게되면 crash되기 떄문에 방어코드
+//                앱 종료된 시점에서 타게되면 crash되기 떄문에 방어코드
                 if(!isAlert){
-                    appDelegate.mainView.sendWebURL(url: strURL!)
+                    appDelegate.mainView.sendWebURL(url: "a")
                 }
-                
             }
-            else{
-                
-            }
+            
+            
+            
+            
+            
+            
+//            if let aps = userInfo["aps"] as? NSDictionary {
+//
+//                let strURL: String? = (aps["title"] as! String?)
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//
+//                //앱 종료된 시점에서 타게되면 crash되기 떄문에 방어코드
+//                if(!isAlert){
+//                    appDelegate.mainView.sendWebURL(url: strURL!)
+//                }
+//
+//            }
+//            else{
+//
+//            }
         }
         completionHandler()
     }
@@ -160,8 +183,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
 
 
-        print("MessageID: \(userInfo["gcm.message_id"])")
-        print(userInfo)
+//        print("MessageID: \(userInfo["gcm.message_id"])")
+//        print(userInfo[AnyHashable("aps")])
+//        print(userInfo[AnyHashable("logout")])
+
+        
+        
+        //다른 기기에서 로그인이 되었다면 여기로 들어옵니다
+        if let logout = userInfo[AnyHashable("logout")]{
+//
+//            let alert = UIAlertController(title: "로그아웃", message: "다른기기에서 로그인되어 강제로 로그아웃됩니다.", preferredStyle: .alert)
+//            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction!) -> Void in
+//
+//                MainView.database.ContactDB()
+//                MainView.database.DeleteUrlInfo()
+//
+//
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let view = storyboard.instantiateViewController(withIdentifier: "UrlConnectView") as UIViewController
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                //show window
+//                appDelegate.window?.rootViewController = view
+//
+//            })
+//
+//            alert.addAction(action)
+            
+         
+            mainView.Logout()
+            
+            
+        }
+        
         
         complitionHandler(UIBackgroundFetchResult.newData)
 
