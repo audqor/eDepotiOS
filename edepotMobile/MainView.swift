@@ -166,6 +166,7 @@ class MainView : UIViewController, WKUIDelegate, WKNavigationDelegate, UIWebView
                 //show window
                 appDelegate.window?.rootViewController = view
                 
+                
             }
             else{
             
@@ -383,16 +384,20 @@ class MainView : UIViewController, WKUIDelegate, WKNavigationDelegate, UIWebView
     
     func Logout(){
         
-        let alert = UIAlertController(title: "로그아웃", message: "다른기기에서 로그인되어 강제로 로그아웃됩니다.", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction!) -> Void in
-            
-            self.WebView.evaluateJavaScript("LogoutClick()", completionHandler: { result, error in
-                
-            })
-          
-        })
+//        let alert = UIAlertController(title: "로그아웃", message: "다른기기에서 로그인되어 강제로 로그아웃됩니다.", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction!) -> Void in
+//
+//            self.WebView.evaluateJavaScript("LogoutClick()", completionHandler: { result, error in
+//
+//            })
+//
+//        })
+//
+//        alert.addAction(action)
+//        self.present(alert, animated: true, completion: nil)
         
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        self.WebView.evaluateJavaScript("LogoutClick()", completionHandler: { result, error in
+            
+        })
     }
 }

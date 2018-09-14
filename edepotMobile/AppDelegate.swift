@@ -35,31 +35,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //앱은 꺼져있는데 푸시를 받고 해당 푸시를 클릭했을 때
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, err)
-            
-            in
-            if err != nil{
-                
-            } else {
-                
-                UNUserNotificationCenter.current().delegate = self
-                Messaging.messaging().delegate = self
-                
-                DispatchQueue.main.async {
-                    application.registerForRemoteNotifications()
+        if #available(iOS 10.0, *){
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, err) in
+                if err != nil{
+                    
+                } else {
+                    
+                    UNUserNotificationCenter.current().delegate = self
+                    Messaging.messaging().delegate = self
+                    
+                    DispatchQueue.main.async {
+                        application.registerForRemoteNotifications()
+                    }
+                    FirebaseApp.configure()
                 }
-                FirebaseApp.configure()
+                
             }
+        }else{
+            let notificationSettings = UIUserNotificationSettings(types:[.alert,.sound,.badge],categories:nil)
+            application.registerUserNotificationSettings(notificationSettings)
+            application.registerForRemoteNotifications()
+            application.delegate = self
+        }
+        let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
+        
+        if remoteNotif != nil {
+            if (remoteNotif!["aps" as NSString] as? NSDictionary) != nil {
+                isAlert = true
+            }
+        }
+        else{
             
         }
-        
-        let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
-                if remoteNotif != nil {
-                    if (remoteNotif!["aps" as NSString] as? NSDictionary) != nil {
-                        isAlert = true
-                    }
-                }
         
         return true
         
@@ -134,12 +141,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     appDelegate.mainView.sendWebURL(url: "a")
                 }
             }
-            
-            
-            
-            
-            
-            
 //            if let aps = userInfo["aps"] as? NSDictionary {
 //
 //                let strURL: String? = (aps["title"] as! String?)
@@ -155,6 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //
 //            }
         }
+        
         completionHandler()
     }
     
@@ -165,9 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         if state == .background{
             
-            print(state)
             
-            //background
         }
         else{
             
@@ -180,14 +180,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     @available(iOS 10.0, *)
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler complitionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-        
-
-
-//        print("MessageID: \(userInfo["gcm.message_id"])")
-//        print(userInfo[AnyHashable("aps")])
-//        print(userInfo[AnyHashable("logout")])
-
-        
         
         //다른 기기에서 로그인이 되었다면 여기로 들어옵니다
         if let logout = userInfo[AnyHashable("logout")]{
@@ -203,6 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
     
+    //앱을 닫고 백그라운드 상태가 되었을 때
     func applicationDidEnterBackground(_ application: UIApplication) {
         
         //        let content = UNMutableNotificationContent()
@@ -216,11 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //
         //        UNUserNotificationCenter.current().add(request, withCompletionHandler: {(error) in })
         
-        
-        
-        
         Messaging.messaging().shouldEstablishDirectChannel = false
-        print("Disconnected from FCM.")
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -303,7 +292,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
         print(deviceTokenString)
-        
+        tokenKey = InstanceID.instanceID().token()!;
         //shareExtension을 위해 꼭 필요한 코드!!
         let shareDefaults = UserDefaults(suiteName: "group.edepot")
         shareDefaults!.set(tokenKey, forKey:"tokenKey")
